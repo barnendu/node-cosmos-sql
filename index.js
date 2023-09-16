@@ -34,6 +34,16 @@ const newItem = {
     const querySpec = {
       query: "SELECT * from c"
     };
+// 2nd sample query
+    const querySpec2 = {
+      query: "select * from products p where p.categoryId=@categoryId",
+      parameters: [
+          {
+              name: "@categoryId",
+              value: items[2].categoryId
+          }
+      ]
+  };
     
     // read all items in the Items container
     const { resources: items } = await container.items
